@@ -31,11 +31,14 @@ int main()
 
 vector<int> solution(vector<int> &A, int K) {
     int length = A.size();
-    int numberOfRotations = K % length;
     vector<int> result;
+    
+    if(length > 0){
+        int numberOfRotations = K % length;
 
-    for(int i=numberOfRotations; i>0; i--) result.push_back(A[length - i]);
-    for(int i=0; i<length-numberOfRotations; i++) result.push_back(A[i]);
+        for(int i=numberOfRotations; i>0; i--) result.push_back(A[length - i]);
+        for(int i=0; i<length-numberOfRotations; i++) result.push_back(A[i]);
 
-    return result;
+        return result;
+    }
 }
